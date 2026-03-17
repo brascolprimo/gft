@@ -1,0 +1,190 @@
+/* =============================================
+   КАРТОЧКА NFT (базовый вариант — для всех случаев)
+   ============================================= */
+.nft-card {
+  /* Базовые визуальные стили */
+  padding: 20px 16px;
+  background: rgba(30, 38, 50, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.3);
+  transition: border 0.2s, box-shadow 0.2s, transform 0.2s;
+
+  /* По умолчанию для плавающих карточек */
+  width: fit-content;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nft-card:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.nft-card .nft-image {
+  margin-bottom: 14px;
+  background: linear-gradient(145deg, #2a3440, #1f2833);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #A0B0C0;
+  font-size: 0.8rem;
+}
+
+.nft-card .nft-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nft-card .nft-title {
+  margin-bottom: 4px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nft-card .nft-subtitle {
+  color: #A0B0C0;
+  font-size: 0.8rem;
+}
+
+/* =============================================
+   МОДИФИКАТОР ДЛЯ КАРТОЧЕК В СЕТКЕ (без лишнего пространства)
+   ============================================= */
+.nft-card.grid {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  float: none;
+  position: relative;
+  z-index: 1;
+
+  /* Уменьшаем вертикальные отступы */
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  /* Улучшенная плавность для подъёма и теней */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.nft-card.grid:hover {
+  z-index: 2;
+  transform: translateY(-4px);
+  box-shadow: 
+    0 0 0 0.5px #3B82F6,                     /* ультратонкая синяя обводка */
+    0 0 20px rgba(59, 130, 246, 0.5),         /* внешнее свечение */
+    0 8px 20px -8px rgba(0, 0, 0, 0.3);       /* исходная тень */
+}
+
+.nft-card.grid .nft-image {
+  aspect-ratio: 1 / 1;
+  margin-bottom: 8px;
+}
+
+.nft-card.grid .nft-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nft-card.grid .nft-title {
+  flex-grow: 1;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.nft-card.grid .nft-subtitle {
+  font-size: 0.7rem;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+  .nft-card.grid {
+    padding: 8px 10px;
+  }
+  .nft-card.grid .nft-image {
+    margin-bottom: 6px;
+  }
+  .nft-card.grid .nft-title {
+    font-size: 0.8rem;
+  }
+  .nft-card.grid .nft-subtitle {
+    font-size: 0.65rem;
+  }
+}
+
+/* =============================================
+   Таблицы
+   ============================================= */
+.md-typeset table:not([class]) {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.md-typeset table th {
+  padding: 14px 16px !important;
+  background: rgba(38, 48, 66, 0.8) !important;
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+
+.md-typeset table td {
+  padding: 12px 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* =============================================
+   Сетка для карточек подарков (адаптивная)
+   ============================================= */
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  row-gap: 16px;
+  column-gap: 16px;
+  margin: 20px 0;
+}
+
+@media (max-width: 500px) {
+  .gift-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    row-gap: 12px;
+    column-gap: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .gift-grid {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  }
+}
+
+/* =============================================
+   Отключаем анимированное подчёркивание для ссылок-карточек
+   ============================================= */
+.md-typeset a.nft-card {
+  position: static;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.md-typeset a.nft-card::after {
+  display: none;
+}
+
+.md-typeset a.nft-card:hover {
+  color: inherit;
+}

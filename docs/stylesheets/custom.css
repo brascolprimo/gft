@@ -1,0 +1,264 @@
+/* =============================================
+   Глобальный градиентный индикатор прокрутки (сверху вниз)
+   ============================================= */
+.global-scroll-indicator {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.global-scroll-indicator-fill {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, #4a9eff, #8a2be2);
+  box-shadow: 0 0 10px #4a9eff, 0 0 30px #8a2be2;
+  transition: height 0.05s linear;
+  animation: scrollGlowPulse 3s infinite alternate;
+}
+
+@keyframes scrollGlowPulse {
+  0% {
+    opacity: 0.9;
+    box-shadow: 0 0 15px #4a9eff, 0 0 25px #8a2be2;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 25px #4a9eff, 0 0 40px #8a2be2;
+  }
+}
+
+/* =============================================
+   Скрытие стандартного скроллбара
+   ============================================= */
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* =============================================
+   Стеклянная кнопка (glass-button)
+   ============================================= */
+.glass-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0px;
+  padding: 0px 0px;
+  background: rgba(30, 36, 51, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #E0E5EC;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.glass-button:hover {
+  background: rgba(59, 130, 246, 0.3);
+  border-color: #4a9eff;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.glass-button::after {
+  display: none !important;
+}
+
+/* =============================================
+   Стилизация окна поиска (результатов) — только для десктопа
+   ============================================= */
+@media (min-width: 769px) {
+  .md-search__output {
+    background: rgba(30, 36, 51, 0.85) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  .md-search-result__meta {
+    background: rgba(20, 24, 31, 0.6);
+    color: #A0B0C0;
+    font-size: 0.9rem;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .md-search-result__item {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+  }
+
+  .md-search-result__item:hover {
+    background: rgba(59, 130, 246, 0.15);
+  }
+
+  .md-search-result__article {
+    color: #E0E5EC;
+  }
+
+  .md-search-result__title {
+    color: #FFFFFF;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .md-search-result__teaser {
+    color: #B0C0D0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .md-typeset mark {
+    background: rgba(59, 130, 246, 0.3);
+    color: #FFFFFF;
+    padding: 2px 4px;
+    border-radius: 8px;
+  }
+
+  .md-search-result__list::-webkit-scrollbar {
+    width: 6px;
+  }
+  .md-search-result__list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .md-search-result__list::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.4);
+    border-radius: 10px;
+  }
+  .md-search-result__list::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.7);
+  }
+}
+
+/* =============================================
+   Кнопка копирования (copy-btn) — для обратной совместимости
+   ============================================= */
+.copy-btn {
+  background: rgba(30, 36, 51, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 4px 12px;
+  color: #4a9eff;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-btn:hover {
+  background: rgba(59, 130, 246, 0.3);
+  border-color: #4a9eff;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.copy-btn.copied {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.copy-btn::after {
+  display: none !important;
+}
+
+/* =============================================
+   Кликабельный адрес (copy-address)
+   ============================================= */
+.copy-address {
+  display: inline-block;
+  background: rgba(30, 36, 51, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 6px 18px;
+  color: #4a9eff;
+  font-size: 0.9rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none !important;
+  line-height: 1.5;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.copy-address:hover {
+  background: rgba(59, 130, 246, 0.4);
+  border-color: #4a9eff;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+.copy-address.copied {
+  background: rgba(16, 185, 129, 0.4);
+  border-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+}
+
+.copy-address::-webkit-scrollbar {
+  display: none;
+}
+
+.copy-address::after {
+  display: none !important;
+}
+ @media screen and (min-width: 60em) {
+  .md-nav--secondary .md-nav__title {
+    box-shadow: none !important;
+  }
+}
+/* === Полное обнуление фонов, теней и границ у заголовков сайдбаров === */
+
+/* Левый сайдбар (основное меню) */
+.md-sidebar--primary .md-nav__title {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-bottom: none !important;
+}
+
+/* Правый сайдбар (оглавление) */
+.md-sidebar--secondary .md-nav__title {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-bottom: none !important;
+}
+
+
+/* Убираем границы у контейнеров элементов */
+.md-nav__item {
+  border: none !important;
+}
+
+/* Если в сайдбарах есть дополнительные внутренние разделители (например, :before или :after), 
+   можно отключить их по необходимости, но обычно это не требуется. */

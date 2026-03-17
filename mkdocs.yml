@@ -1,0 +1,38 @@
+site_name:  GFT.guru
+plugins:
+  - search        
+theme:
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/logo.png
+  palette:
+    scheme: slate          # тёмная тема
+    primary: blue grey     # спокойный серо-голубой
+    accent: light blue     # акцент как на Tonviewer
+  font:
+    text: Inter            # современный гротеск
+    code: Fira Code
+  
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.suggest
+extra:
+  generator: false   # убирает надпись "MkDocs" в подвале
+extra_css:
+  - stylesheets/base.css
+  - stylesheets/layout.css
+  - stylesheets/components.css   
+  - stylesheets/custom.css
+  - stylesheets/links.css   # если вынесли ссылки отдельно, иначе включите в base
+extra_javascript:
+  - javascripts/scroll-indicator.js
+  - javascripts/copy.js
+nav:
+  - Главная: index.md
+  - Персоналии: persons/index.md          # если нужно
+  - Гайды: guides/index.md                 # если нужно
+  - Подарки: gifts/index.md                # только обзорная страница
+  - События: events/index.md                # если нужно
