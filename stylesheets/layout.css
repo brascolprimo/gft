@@ -1,0 +1,209 @@
+/* =============================================
+   Шапка (header)
+   ============================================= */
+.md-header {
+  background-color: rgba(30, 36, 51, 0.8) !important;
+  border-radius: 20px; /* Скругляем больше для мягкости */
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(30, 36, 51, 0.9) !important;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.05),
+    inset 0 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  
+  /* Тонкий "световой" бортик снизу */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+
+.md-header__button.md-logo {
+  display: none;
+}
+
+/* =============================================
+   Основной контент
+   ============================================= */
+.md-main__inner {
+  margin-top: 1.2rem;
+}
+
+.md-content {
+  background: transparent !important;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+/* =============================================
+   Поиск (search bar)
+   ============================================= */
+.md-search__form {
+  background: rgba(30, 36, 51, 0.7) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 32px !important;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.md-search__form:hover {
+  background: rgba(40, 48, 66, 0.8) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.md-search__input {
+  border-radius: 32px !important;
+  color: #E5E9F0 !important;
+}
+
+.md-search__input::placeholder {
+  color: rgba(200, 210, 230, 0.6);
+}
+
+.md-search__icon {
+  color: #A0B0C0 !important;
+}
+
+
+
+/* =============================================
+   Сайдбары (боковые панели)
+   ============================================= */
+/*.md-sidebar {
+  background: transparent !important;
+}
+
+.md-sidebar__inner {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  padding: 16px 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.md-sidebar--secondary .md-sidebar__inner {
+  background: rgba(25, 30, 40, 0.6) !important;
+}*/
+
+/* Навигация внутри сайдбара */
+/*.md-nav {
+  color: #C0D0E0;
+}
+
+.md-nav__title {
+  color: #FFFFFF;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  padding: 8px 0 12px 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+*/
+/* Общие стили для ссылок: эффект «пузырька» */
+.md-nav__link {
+  color: #B0C0D0;
+  border-radius: 20px; /* Скругляем больше для мягкости */
+  padding: 8px 16px;
+  
+  /* Плавный переход с «вязким» таймингом */
+  transition: 
+    background 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+    color 0.3s ease, 
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    backdrop-filter 0.4s;
+  
+  white-space: normal;
+  word-break: break-word;
+  
+  /* Легкая основа, чтобы текст читался, но не перегружал */
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  
+  /* Эффект преломления даже в покое */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Состояние при наведении — пузырек «надувается» и светлеет */
+.md-nav__link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  
+  /* Усиливаем размытие и добавляем внутренний блик */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    
+  /* Эффект легкого «выпуклого» смещения */
+  transform: scale(1.02) translateX(5px);
+}
+
+/* Стиль активного пункта: Liquid Glass */
+.md-nav__link--active {
+    color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  
+  /* Усиливаем размытие и добавляем внутренний блик */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+  font-weight: 400;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Эффект при наведении: мягкое «надувание» */
+.md-nav__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  /* Легкое масштабирование добавляет «органичности» */
+  transform: translateX(4px);
+}
+
+/* Скрываем скроллбар в правом сайдбаре */
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.md-sidebar--secondary .md-sidebar__scrollwrap::-webkit-scrollbar {
+  display: none;
+}
+
+/* =============================================
+   Подвал (footer)
+   ============================================= */
+.md-footer {
+  background: rgba(26, 33, 43, 0.8);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--glass-border);
+}
+/* Отступ для логотипа в шапке */
+.md-header__button.md-logo {
+  margin-left: 0px !important;
+}
+
+/* Отступ для логотипа в мобильном меню (сайдбар) */
+.md-nav__title .md-nav__button.md-logo {
+  margin-left: 0px !important;
+}
+
+/* Убираем возможные авто-отступы, которые тема добавляет на мобильных */
+@media (max-width: 600px) {
+  .md-header__button.md-logo img,
+  .md-nav__title .md-nav__button.md-logo img {
+    margin: 0 !important; /* отключаем центрирование */
+    max-width: none; /* если нужно */
+  }
+}

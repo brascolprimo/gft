@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центрирование только при помещении</title>
+    <style>
+        :root {
+            --glass-bg: rgba(30, 36, 51, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+        body {
+            background: #14181f;
+            color: #E5E9F0;
+            font-family: system-ui, sans-serif;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Блок */
+        .image-text-block {
+            display: flex;
+            gap: 24px;
+            align-items: stretch;      /* колонки одной высоты */
+            margin: 30px 0;
+        }
+
+        .image-col {
+            flex: 0 0 300px;
+            max-width: 100%;
+        }
+
+        /* Карточка */
+        .nft-card.adaptive {
+            padding: 12px;
+            background: rgba(30, 38, 50, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .nft-card.adaptive .nft-image {
+            height: 400px;
+            background: linear-gradient(145deg, #2a3440, #1f2833);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .nft-card.adaptive .nft-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+        .nft-card.adaptive .nft-title {
+            color: #fff;
+            font-weight: 600;
+            margin: 8px 0 4px;
+        }
+        .nft-card.adaptive .nft-subtitle {
+            color: #A0B0C0;
+            font-size: 0.8rem;
+        }
+
+        /* Правая колонка — базовые стили (без центрирования) */
+        .text-col {
+            flex: 1;
+            min-width: 260px;
+            background: rgba(30, 36, 51, 0.25);
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow-y: auto;           /* скролл при переполнении */
+            display: flex;
+            flex-direction: column;
+            /* без justify-content — текст идёт сверху */
+        }
+
+        /* Если контент помещается — центрируем */
+        .text-col.centered {
+            justify-content: center;
+        }
+
+        /* Стили скролла */
+        .text-col::-webkit-scrollbar { width: 6px; }
+        .text-col::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 10px; }
+        .text-col::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.4); border-radius: 10px; }
+
+        /* Контент */
+        .text-col p, .text-col ul { margin: 0; }
+        .text-col p + p { margin-top: 1em; }
+        .text-col h3 { color: #fff; margin-top: 0; margin-bottom: 0.5em; }
+        .text-col ul { padding-left: 20px; color: #C0D0E0; }
+
+        @media (max-width: 700px) {
+            .image-text-block {
+                flex-direction: column;
+            }
+            .image-col {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .text-col {
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="color: #fff;">Центрирование только если текст помещается</h2>
+
+        <!-- Случай 1: мало текста (помещается → центрируется) -->
+        <div class="image-text-block" data-check-overflow>
+            <div class="image-col">
+                <div class="nft-card adaptive">
+                    <div class="nft-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232a3440'/%3E%3Ctext x='50%25' y='50%25' fill='%23A0B0C0' text-anchor='middle' dy='.3em'%3Eизобр.%3C/text%3E%3C/svg%3E">
+                    </div>
+                    <div class="nft-title">Plush Pepe</div>
+                    <div class="nft-subtitle">Коллекция</div>
+                </div>
+            </div>
+            <div class="text-col">
+                <p>Краткое описание. Текст помещается целиком → центрирован.</p>
+            </div>
+        </div>
+
+        <!-- Случай 2: средний текст (тоже помещается → центрируется) -->
+        <div class="image-text-block" data-check-overflow>
+            <div class="image-col">
+                <div class="nft-card adaptive">
+                    <div class="nft-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232a3440'/%3E%3Ctext x='50%25' y='50%25' fill='%23A0B0C0' text-anchor='middle' dy='.3em'%3Eизобр.%3C/text%3E%3C/svg%3E">
+                    </div>
+                    <div class="nft-title">Scared Cat</div>
+                    <div class="nft-subtitle">Коллекция</div>
+                </div>
+            </div>
+            <div class="text-col">
+                <p>Это самая редкая модель Obelisk. Выпущено всего 50 экземпляров.</p>
+                <p>Дата выхода: 31 октября 2024.</p>
+            </div>
+        </div>
+
+        <!-- Случай 3: много текста (переполняет → без центрирования, скролл) -->
+        <div class="image-text-block" data-check-overflow>
+            <div class="image-col">
+                <div class="nft-card adaptive">
+                    <div class="nft-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232a3440'/%3E%3Ctext x='50%25' y='50%25' fill='%23A0B0C0' text-anchor='middle' dy='.3em'%3Eизобр.%3C/text%3E%3C/svg%3E">
+                    </div>
+                    <div class="nft-title">Telegram Stars</div>
+                    <div class="nft-subtitle">Валюта</div>
+                </div>
+            </div>
+            <div class="text-col">
+                <h3>Telegram Stars</h3>
+                <p>Внутренняя цифровая валюта, запущенная 6 июня 2024 года. Предназначена для микроплатежей, поддержки авторов и оплаты цифровых товаров.</p>
+                <p><strong>Приобретение:</strong> через встроенные покупки или @PremiumBot.</p>
+                <p><strong>Использование:</strong></p>
+                <ul>
+                    <li>Платные сообщения</li>
+                    <li>Поддержка авторов (реакции-дотации)</li>
+                    <li>Цифровые товары в ботах</li>
+                    <li>Оплата рекламы в Telegram Ads</li>
+                </ul>
+                <p><strong>Вывод:</strong> Конвертация в Toncoin через Fragment.</p>
+                <p>Звёзды не являются криптовалютой, все операции централизованы.</p>
+                <p>Дополнительный абзац, чтобы точно было переполнение.</p>
+            </div>
+        </div>
+
+        <!-- Случай 4: пусто (тоже помещается, но можно оставить как есть, центрировать нечего) -->
+        <div class="image-text-block" data-check-overflow>
+            <div class="image-col">
+                <div class="nft-card adaptive">
+                    <div class="nft-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232a3440'/%3E%3Ctext x='50%25' y='50%25' fill='%23A0B0C0' text-anchor='middle' dy='.3em'%3Eизобр.%3C/text%3E%3C/svg%3E">
+                    </div>
+                    <div class="nft-title">Christmas Drop</div>
+                    <div class="nft-subtitle">Скоро</div>
+                </div>
+            </div>
+            <div class="text-col"></div>
+        </div>
+
+        <p style="color: #B0C0D0; margin-top: 40px;">✔ Текст центрируется только когда не вызывает скролл. При переполнении — обычный поток сверху.</p>
+    </div>
+
+    <script>
+        // Проверяем переполнение для каждой правой колонки
+        document.querySelectorAll('[data-check-overflow]').forEach(block => {
+            const textCol = block.querySelector('.text-col');
+            if (!textCol) return;
+
+            // Функция проверки и установки класса
+            const checkOverflow = () => {
+                // Сброс класса
+                textCol.classList.remove('centered');
+
+                // Проверяем, переполняет ли содержимое
+                if (textCol.scrollHeight > textCol.clientHeight) {
+                    // Переполняет — не центрируем
+                } else {
+                    // Не переполняет — добавляем центрирование (если есть контент)
+                    if (textCol.children.length > 0) {
+                        textCol.classList.add('centered');
+                    }
+                }
+            };
+
+            // Запускаем после небольшой задержки, чтобы браузер точно рассчитал высоты
+            setTimeout(checkOverflow, 50);
+            // Также можно повесить на resize, но для демо достаточно
+            window.addEventListener('resize', checkOverflow);
+        });
+    </script>
+</body>
+</html>

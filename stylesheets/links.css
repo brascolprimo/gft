@@ -1,0 +1,57 @@
+/* =============================================
+   Стильные гиперссылки (с анимацией подчёркивания)
+   ============================================= */
+.md-typeset a {
+  position: relative;
+  color: #4a9eff;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .md-typeset a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #4a9eff;
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: width 0.25s ease;
+  }
+
+  .md-typeset a:hover::after {
+    width: 100%;
+  }
+
+  .md-typeset a:hover {
+    color: #7bb5ff;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .md-typeset a:active {
+    color: #7bb5ff;
+  }
+}
+/* Отключаем анимированное подчёркивание для NFT-карточек */
+.md-typeset a.nft-card,
+.md-typeset a.nft-card.grid {
+  position: static;        /* убираем относительное позиционирование */
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.md-typeset a.nft-card::after,
+.md-typeset a.nft-card.grid::after {
+  display: none;           /* убираем псевдоэлемент с подчёркиванием */
+}
+
+.md-typeset a.nft-card:hover,
+.md-typeset a.nft-card.grid:hover {
+  color: inherit;          /* запрещаем смену цвета текста при наведении */
+}
