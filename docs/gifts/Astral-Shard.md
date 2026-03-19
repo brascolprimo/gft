@@ -12,7 +12,7 @@ status: draft
   <!-- Левая часть: карточка коллекции Astral Shard -->
   <div class="nft-card" style="width: 220px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/astralshard.webp" alt="Astral Shard Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/astralshard.webp" alt="Astral Shard Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Astral Shard</div>
     <div class="nft-subtitle">Коллекция</div>
@@ -38,7 +38,7 @@ status: draft
   <!-- Левая часть: карточка экземпляра Eve’s Apple -->
   <div class="nft-card" style="width: 250px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/astral-shard-eves-apple.png" alt="Astral Shard Eve’s Apple" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/astral-shard-eves-apple.png" alt="Astral Shard Eve’s Apple" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Astral Shard #952</div>
     <div class="nft-subtitle">Модель Eve’s Apple</div>

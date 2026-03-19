@@ -12,7 +12,7 @@ status: draft
   <!-- Левая часть: карточка коллекции -->
   <div class="nft-card" style="width: 220px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/BdayCandle.webp" alt="B-day Candle Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/BdayCandle.webp" alt="B-day Candle Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">B-day Candle</div>
     <div class="nft-subtitle">Коллекция</div>
@@ -36,7 +36,7 @@ status: draft
   <!-- Левая часть: карточка самой редкой модели Kaboom! -->
   <div class="nft-card" style="width: 250px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/b-day-candle-kaboom.png" alt="Kaboom!" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/b-day-candle-kaboom.png" alt="Kaboom!" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">B-Day Candle #1413</div>
     <div class="nft-subtitle">Модель Kaboom!</div>

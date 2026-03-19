@@ -12,7 +12,7 @@ status: draft
   <!-- Левая часть: карточка коллекции Bling Binky -->
   <div class="nft-card" style="width: 220px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/blingbinky.webp" alt="Bling Binky Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/blingbinky.webp" alt="Bling Binky Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Bling Binky</div>
     <div class="nft-subtitle">Коллекция</div>
@@ -38,7 +38,7 @@ status: draft
   <!-- Левая часть: карточка экземпляра Red Lipstick -->
   <div class="nft-card" style="width: 250px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/bling-binky-red-lipstick.png" alt="Bling Binky #3201" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/bling-binky-red-lipstick.png" alt="Bling Binky #3201" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Bling Binky Red Lipstick</div>
     <div class="nft-subtitle">Модель Red Lipstick</div>

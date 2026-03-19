@@ -12,7 +12,7 @@ status: draft
   <!-- Левая часть: карточка коллекции -->
   <div class="nft-card" style="width: 220px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/ionicdryer.webp" alt="Ionic Dryer Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/ionicdryer.webp" alt="Ionic Dryer Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Ionic Dryer</div>
     <div class="nft-subtitle">Коллекция</div>

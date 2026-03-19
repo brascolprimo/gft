@@ -12,7 +12,7 @@ status: draft
   <!-- Левая часть: карточка коллекции Scared Cat (без цены) -->
   <div class="nft-card" style="width: 220px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/scaredcat.webp" alt="Scared Cat Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/scaredcat.webp" alt="Scared Cat Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Scared Cat</div>
     <div class="nft-subtitle">Коллекция</div>
@@ -36,7 +36,7 @@ status: draft
   <!-- Левая часть: карточка экземпляра Obelisk (без цены) -->
   <div class="nft-card" style="width: 250px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/scaredcat-17607.webp" alt="Scared Cat Obelisk" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/scaredcat-17607.webp" alt="Scared Cat Obelisk" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Scared Cat №17607</div>
     <div class="nft-subtitle">Модель Obelisk</div>

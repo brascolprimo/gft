@@ -12,7 +12,7 @@ status: draft
   <!-- Левая часть: карточка коллекции Signet Ring -->
   <div class="nft-card" style="width: 220px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/signetring.webp" alt="Signet Ring Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/signetring.webp" alt="Signet Ring Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Signet Ring</div>
     <div class="nft-subtitle">Коллекция</div>
@@ -36,7 +36,7 @@ status: draft
   <!-- Левая часть: карточка экземпляра Skibidi -->
   <div class="nft-card" style="width: 250px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/signetring.png" alt="Signet Ring Skibidi" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/signetring.png" alt="Signet Ring Skibidi" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Signet Ring #6147</div>
     <div class="nft-subtitle">Модель Skibidi</div>

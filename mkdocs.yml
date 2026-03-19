@@ -1,4 +1,5 @@
 site_name:  GFT.guru
+site_url: https://ivanpetrovbrascolprimo.github.io/gft/
 plugins:
   - search        
 theme:

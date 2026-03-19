@@ -11,7 +11,7 @@ status: draft
 <div style="display: flex; gap: 20px; align-items: start; flex-wrap: wrap;">
   <div class="nft-card" style="width: 220px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/bowtie.webp" alt="Bow Tie Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/bowtie.webp" alt="Bow Tie Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Bow Tie</div>
     <div class="nft-subtitle">Коллекция</div>

@@ -12,7 +12,7 @@ status: draft
   <!-- Левая часть: карточка коллекции Heart Locket -->
   <div class="nft-card" style="width: 220px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/heartlocket.webp" alt="Heart Locket Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/heartlocket.webp" alt="Heart Locket Collection" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Heart Locket</div>
     <div class="nft-subtitle">Коллекция</div>
@@ -38,7 +38,7 @@ status: draft
   <!-- Левая часть: карточка экземпляра Cirque -->
   <div class="nft-card" style="width: 250px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/heart-locket-cirque.png" alt="Heart Locket Cirque" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/heart-locket-cirque.png" alt="Heart Locket Cirque" style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Heart Locket #582</div>
     <div class="nft-subtitle">Модель Cirque</div>
@@ -55,7 +55,7 @@ status: draft
   <!-- Левая часть: карточка экземпляра Turtles -->
   <div class="nft-card" style="width: 250px; margin: 0;">
     <div class="nft-image">
-      <img src="/assets/images/heart-locket-turtles.png" alt="Heart Locket " style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
+      <img src="../../assets/images/heart-locket-turtles.png" alt="Heart Locket " style="width:100%; height:100%; object-fit: cover; border-radius: 20px;">
     </div>
     <div class="nft-title">Heart Locket #607</div>
     <div class="nft-subtitle">Модель Turtles</div>
